@@ -6,6 +6,8 @@ import GeneratedImage from './GeneratedImage';
 
 const ImageGenerator = () => {
   const [prompt, setPrompt] = useState('');
+  const [width, setWidth] = useState(1024);
+  const [height, setHeight] = useState(1024);
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -25,8 +27,8 @@ const ImageGenerator = () => {
     setGeneratedImage(null);
     
     try {
-      // Make API call to generate image
-      const imageUrl = `https://stabledifffusion.com/imagen/${encodeURIComponent(prompt)}?width=1024&height=1024`;
+      // Make API call to generate image with selected dimensions
+      const imageUrl = `https://stabledifffusion.com/imagen/${encodeURIComponent(prompt)}?width=${width}&height=${height}`;
       
       // Simulate API delay
       await new Promise(resolve => setTimeout(resolve, 2000));
@@ -72,6 +74,44 @@ const ImageGenerator = () => {
               className="w-full h-32 p-4 bg-background/50 backdrop-blur-sm border rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
               disabled={isGenerating}
             />
+            
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="width" className="block text-sm font-medium text-muted-foreground mb-1">
+                  Width (px)
+                </label>
+                <select
+                  id="width"
+                  value={width}
+                  onChange={(e) => setWidth(Number(e.target.value))}
+                  className="w-full p-2 bg-background/50 backdrop-blur-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
+                  disabled={isGenerating}
+                >
+                  <option value={512}>512</option>
+                  <option value={768}>768</option>
+                  <option value={1024}>1024</option>
+                  <option value={1280}>1280</option>
+                </select>
+              </div>
+              
+              <div>
+                <label htmlFor="height" className="block text-sm font-medium text-muted-foreground mb-1">
+                  Height (px)
+                </label>
+                <select
+                  id="height"
+                  value={height}
+                  onChange={(e) => setHeight(Number(e.target.value))}
+                  className="w-full p-2 bg-background/50 backdrop-blur-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
+                  disabled={isGenerating}
+                >
+                  <option value={512}>512</option>
+                  <option value={768}>768</option>
+                  <option value={1024}>1024</option>
+                  <option value={1280}>1280</option>
+                </select>
+              </div>
+            </div>
             
             {error && (
               <div className="text-destructive mt-2 text-sm">{error}</div>
