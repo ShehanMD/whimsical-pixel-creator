@@ -62,8 +62,8 @@ const HeroSection = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 z-0"></div>
               <img 
-                src="https://images.unsplash.com/photo-1681266288457-a0f7cb0ee5d0?q=80&w=2670&auto=format&fit=crop"
-                alt="3D AI Generated Art" 
+                src="/lovable-uploads/70606e90-8bbd-477d-8b0d-9b15132ddc63.png"
+                alt="Fantasy Elf in Magical Forest" 
                 className="object-cover w-full aspect-[16/9] z-10 transition-transform duration-700 ease-out"
               />
               <div 
@@ -72,7 +72,7 @@ const HeroSection = () => {
               >
                 <div className="text-white text-left">
                   <div className="text-sm font-medium mb-2 opacity-80">AI GENERATED</div>
-                  <div className="text-xl font-medium">Neon Dreamscape</div>
+                  <div className="text-xl font-medium">Enchanted Forest Guardian</div>
                 </div>
               </div>
             </div>
