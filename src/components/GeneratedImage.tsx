@@ -1,6 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
+import { toast } from "@/hooks/use-toast";
 
 interface GeneratedImageProps {
   imageUrl: string;
@@ -8,12 +9,27 @@ interface GeneratedImageProps {
 
 const GeneratedImage = ({ imageUrl }: GeneratedImageProps) => {
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = imageUrl;
-    link.download = `imagen-${Date.now()}.png`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    try {
+      const link = document.createElement('a');
+      link.href = imageUrl;
+      link.download = `imagen-${Date.now()}.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      toast({
+        title: "Download started",
+        description: "Your image is being downloaded.",
+        variant: "default",
+      });
+    } catch (error) {
+      console.error('Download error:', error);
+      toast({
+        title: "Download failed",
+        description: "There was an error downloading your image.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (

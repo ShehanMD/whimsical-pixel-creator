@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import ImageGenerator from '@/components/ImageGenerator';
+import { Toaster } from "@/components/ui/toaster";
 
 const Generate = () => {
   return (
@@ -14,6 +15,7 @@ const Generate = () => {
     >
       <Navbar />
       <ImageGenerator />
+      <Toaster />
     </motion.div>
   );
 };
