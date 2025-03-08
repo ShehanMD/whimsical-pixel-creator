@@ -61,7 +61,7 @@ const ImageGenerator = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           onSubmit={handleGenerate}
-          className="mb-12"
+          className="mb-8"
         >
           <div className="glass rounded-2xl p-6 shadow-lg transition-all duration-300">
             <textarea
@@ -93,7 +93,9 @@ const ImageGenerator = () => {
           {isGenerating ? (
             <LoadingAnimation />
           ) : generatedImage ? (
-            <GeneratedImage imageUrl={generatedImage} />
+            <div className="w-full max-w-md mx-auto">
+              <GeneratedImage imageUrl={generatedImage} />
+            </div>
           ) : null}
         </div>
       </div>

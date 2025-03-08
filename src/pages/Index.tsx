@@ -83,9 +83,9 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              "https://images.unsplash.com/photo-1636955816868-fcb881e57954",
-              "https://images.unsplash.com/photo-1675351066828-6ae9661dd338",
-              "https://images.unsplash.com/photo-1634986666676-ec8fd927c23d"
+              "https://images.unsplash.com/photo-1675351066828-6ae9661dd338?q=80&w=2670&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1686771017120-0a129c2b0b4f?q=80&w=2670&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1681266507686-23c59f41f679?q=80&w=2670&auto=format&fit=crop"
             ].map((img, index) => (
               <motion.div
                 key={index}

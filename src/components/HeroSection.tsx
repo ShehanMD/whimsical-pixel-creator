@@ -62,7 +62,7 @@ const HeroSection = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 z-0"></div>
               <img 
-                src="https://images.unsplash.com/photo-1686771017120-0a129c2b0b4f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                src="https://images.unsplash.com/photo-1681266288457-a0f7cb0ee5d0?q=80&w=2670&auto=format&fit=crop"
                 alt="3D AI Generated Art" 
                 className="object-cover w-full aspect-[16/9] z-10 transition-transform duration-700 ease-out"
               />
@@ -72,7 +72,7 @@ const HeroSection = () => {
               >
                 <div className="text-white text-left">
                   <div className="text-sm font-medium mb-2 opacity-80">AI GENERATED</div>
-                  <div className="text-xl font-medium">Cosmic Dream Journey</div>
+                  <div className="text-xl font-medium">Neon Dreamscape</div>
                 </div>
               </div>
             </div>
