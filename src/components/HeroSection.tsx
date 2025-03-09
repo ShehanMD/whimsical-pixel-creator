@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Sparkles, Wand2 } from 'lucide-react';
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -37,27 +36,9 @@ const HeroSection = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col space-y-2"
           >
-            <motion.div 
-              className="flex items-center justify-center gap-2 text-sm font-medium tracking-wider text-primary mb-2"
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <Sparkles className="h-4 w-4" />
-              <span>AI-POWERED 3D IMAGERY</span>
-              <Sparkles className="h-4 w-4" />
-            </motion.div>
+            <span className="text-sm font-medium tracking-wider text-primary">AI-POWERED 3D IMAGERY</span>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
-              Transform your <span className="text-gradient relative">
-                imagination
-                <motion.div 
-                  className="absolute -inset-1 bg-primary/20 blur-lg rounded-full -z-10"
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                    opacity: [0.5, 0.8, 0.5]
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                />
-              </span><br />
+              Transform your <span className="text-gradient">imagination</span><br />
               into stunning 3D art
             </h1>
             <p className="max-w-xl mx-auto text-lg text-muted-foreground mt-6">
@@ -76,22 +57,14 @@ const HeroSection = () => {
             className="transform-3d w-full max-w-xl transition-transform duration-200 ease-out"
           >
             <div 
-              className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-white/10"
+              className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 border border-white/10"
               style={{ transform: 'translateZ(40px)' }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 z-0"></div>
               <img 
                 src="/lovable-uploads/70606e90-8bbd-477d-8b0d-9b15132ddc63.png"
                 alt="Fantasy Elf in Magical Forest" 
-                className="object-cover w-full aspect-[16/9] z-10 transition-transform duration-700 ease-out hover:scale-105"
-              />
-              <motion.div 
-                className="absolute inset-0 border-4 border-white/10 z-30 pointer-events-none"
-                style={{ transform: 'translateZ(10px)' }}
-                animate={{ 
-                  boxShadow: ['0 0 0px rgba(59, 130, 246, 0)', '0 0 15px rgba(59, 130, 246, 0.5)', '0 0 0px rgba(59, 130, 246, 0)'] 
-                }}
-                transition={{ duration: 3, repeat: Infinity }}
+                className="object-cover w-full aspect-[16/9] z-10 transition-transform duration-700 ease-out"
               />
               <div 
                 className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-20 flex items-end p-8"
@@ -109,19 +82,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            whileHover={{ scale: 1.05, y: -5 }}
-            whileTap={{ scale: 0.98 }}
-            className="button-primary text-lg font-medium flex items-center gap-2 overflow-hidden relative group"
+            className="button-primary text-lg font-medium"
             onClick={() => navigate('/generate')}
           >
-            <span className="relative z-10">Start Creating</span>
-            <Wand2 className="w-5 h-5 relative z-10" />
-            <motion.div 
-              className="absolute inset-0 bg-primary/80 -z-0"
-              initial={{ x: '-100%' }}
-              whileHover={{ x: '0%' }}
-              transition={{ duration: 0.3 }}
-            />
+            Start Creating
           </motion.button>
         </div>
       </div>
