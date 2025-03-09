@@ -46,42 +46,42 @@
   }
 
   .dark {
-    --background: 210 40% 2%;
-    --foreground: 210 40% 98%;
+    --background: 240 10% 3.9%; /* Dark background */
+    --foreground: 0 0% 98%; /* Light text */
 
-    --card: 210 40% 4%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 10% 4%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 210 40% 4%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 10% 4%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 100% 50%;
+    --primary: 263 70% 60%; /* Neon purple */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 12%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 240 5% 10%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 12%;
-    --muted-foreground: 210 20% 70%;
+    --muted: 240 5% 12%;
+    --muted-foreground: 240 5% 65%;
 
-    --accent: 210 40% 12%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 12 90% 55%; /* Neon orange accent */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 40% 12%;
-    --input: 210 40% 12%;
-    --ring: 210 100% 50%;
+    --border: 240 5% 12%; 
+    --input: 240 5% 12%;
+    --ring: 263 70% 60%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 240 10% 3.9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 263 70% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 240 5% 12%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 5% 12%;
+    --sidebar-ring: 263 70% 60%;
   }
 }
 
@@ -91,7 +91,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased dark;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -99,13 +99,14 @@
 
 @layer components {
   .glass {
-    @apply backdrop-blur-lg bg-white/30 dark:bg-black/30 border border-white/20 dark:border-white/10;
+    @apply backdrop-blur-lg bg-white/5 dark:bg-black/30 border border-white/20 dark:border-white/10 dark:shadow-[0_0_15px_rgba(149,78,255,0.3)];
   }
   
   .button-primary {
     @apply bg-primary text-primary-foreground px-6 py-2.5 rounded-full 
            hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 
-           hover:-translate-y-0.5 active:translate-y-0 active:shadow-md;
+           hover:-translate-y-0.5 active:translate-y-0 active:shadow-md
+           dark:shadow-[0_0_15px_rgba(149,78,255,0.5)];
   }
   
   .input-primary {
@@ -114,11 +115,12 @@
   }
   
   .card-hover {
-    @apply transition-all duration-500 hover:shadow-xl hover:-translate-y-1;
+    @apply transition-all duration-500 hover:shadow-xl hover:-translate-y-1
+           dark:hover:shadow-[0_0_15px_rgba(149,78,255,0.3)];
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
 
   /* 3D Card Hover Effects */
@@ -144,9 +146,9 @@
     background: linear-gradient(
       135deg,
       rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.25) 25%, 
-      rgba(255, 255, 255, 0.5) 50%,
-      rgba(255, 255, 255, 0.25) 75%,
+      rgba(149, 78, 255, 0.1) 25%, 
+      rgba(149, 78, 255, 0.3) 50%,
+      rgba(149, 78, 255, 0.1) 75%,
       rgba(255, 255, 255, 0) 100%
     );
     pointer-events: none;
@@ -154,6 +156,40 @@
   
   .card-3d:hover .card-3d-shine {
     @apply opacity-100;
+  }
+
+  /* Neon Border Effect */
+  .neon-border {
+    @apply relative;
+    box-shadow: 0 0 5px theme('colors.primary.DEFAULT'), 
+                0 0 10px theme('colors.primary.DEFAULT');
+  }
+
+  .neon-text {
+    text-shadow: 0 0 5px theme('colors.primary.DEFAULT'),
+                 0 0 10px theme('colors.primary.DEFAULT');
+  }
+
+  /* 3D Mouse Hover Effect for Hero Image */
+  .hero-image-3d {
+    @apply relative transition-all duration-300 ease-out transform-gpu;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  .hero-image-inner {
+    @apply relative transition-transform duration-300 ease-out;
+    transform-style: preserve-3d;
+  }
+
+  .hero-image-glow {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300 rounded-2xl;
+    box-shadow: 0 0 30px theme('colors.primary.DEFAULT');
+    pointer-events: none;
+  }
+
+  .hero-image-3d:hover .hero-image-glow {
+    @apply opacity-60;
   }
 }
 
@@ -209,4 +245,22 @@ html {
   transform: scale(1.02);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
               0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Neon animations */
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 5px theme('colors.primary.DEFAULT'),
+                0 0 10px theme('colors.primary.DEFAULT');
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 15px theme('colors.primary.DEFAULT'),
+                0 0 30px theme('colors.primary.DEFAULT');
+  }
+}
+
+.neon-pulse {
+  animation: neonPulse 2s infinite;
 }

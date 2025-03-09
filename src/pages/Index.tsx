@@ -25,7 +25,7 @@ const Index = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-4">How It Works</h2>
+              <h2 className="text-3xl font-bold mb-4 neon-text">How It Works</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Creating stunning 3D AI-generated images has never been easier
               </p>
@@ -53,12 +53,12 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 viewport={{ once: true }}
-                className="glass rounded-2xl p-8 text-center card-hover"
+                className="glass rounded-2xl p-8 text-center card-hover neon-border"
               >
-                <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl font-bold mx-auto mb-6">
+                <div className="w-12 h-12 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xl font-bold mx-auto mb-6 neon-text">
                   {index + 1}
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 neon-text">{step.title}</h3>
                 <p className="text-muted-foreground">{step.description}</p>
               </motion.div>
             ))}
@@ -75,7 +75,7 @@ const Index = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-4">Featured Creations</h2>
+              <h2 className="text-3xl font-bold mb-4 neon-text">Featured Creations</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Explore what others have created with our platform
               </p>
@@ -94,7 +94,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 viewport={{ once: true }}
-                className="card-3d rounded-2xl shadow-lg overflow-hidden"
+                className="card-3d rounded-2xl shadow-lg overflow-hidden neon-border"
                 whileHover={{ scale: 1.02 }}
               >
                 <div className="card-3d-content">
@@ -105,14 +105,14 @@ const Index = () => {
                   />
                   <div className="card-3d-shine"></div>
                 </div>
-                <div className="absolute inset-0 pointer-events-none rounded-2xl shadow-[0_0_15px_rgba(0,0,0,0.07),0_0_5px_rgba(0,0,0,0.07)]"></div>
+                <div className="absolute inset-0 pointer-events-none rounded-2xl shadow-[0_0_15px_rgba(149,78,255,0.2)]"></div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
       
-      <footer className="py-12 px-8 border-t">
+      <footer className="py-12 px-8 border-t border-white/10">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-muted-foreground">© 2023 Vizora. All rights reserved.</p>
         </div>
