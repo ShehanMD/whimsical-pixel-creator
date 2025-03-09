@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import { Sparkles, Star, Wand2, Cube } from 'lucide-react';
+import { Sparkles, Star, Wand2, Box } from 'lucide-react';
 
 const Index = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -105,7 +105,7 @@ const Index = () => {
                 <p className="text-muted-foreground">{step.description}</p>
                 
                 <div className="absolute -bottom-2 -left-2 w-8 h-8 text-primary/20">
-                  <Cube className="w-full h-full" />
+                  <Box className="w-full h-full" />
                 </div>
               </motion.div>
             ))}
