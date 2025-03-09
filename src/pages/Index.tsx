@@ -43,7 +43,7 @@ const Index = () => {
 
       <motion.section 
         style={{ opacity, scale }}
-        className="py-20 px-8 bg-gradient-to-b from-background to-secondary/5"
+        className="py-20 px-8 bg-white dark:bg-gray-900 shadow-lg"
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -57,12 +57,12 @@ const Index = () => {
               <h2 className="text-4xl font-bold mb-4 relative inline-block">
                 <span className="relative z-10">How It Works</span>
                 <motion.div 
-                  className="absolute -inset-1 -z-10 opacity-10 blur-sm bg-primary/50 rounded-full"
+                  className="absolute -inset-1 -z-10 bg-primary/20 rounded-full"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 />
               </h2>
-              <p className="text-xl text-foreground max-w-2xl mx-auto">
+              <p className="text-2xl font-medium text-foreground max-w-2xl mx-auto">
                 Creating stunning 3D AI-generated images has never been easier
               </p>
             </motion.div>
@@ -73,17 +73,17 @@ const Index = () => {
               {
                 title: "Describe",
                 description: "Type a detailed description of the image you want to create",
-                icon: <Wand2 className="w-6 h-6 text-primary" />
+                icon: <Wand2 className="w-8 h-8 text-primary" />
               },
               {
                 title: "Generate",
                 description: "Our advanced AI transforms your words into a stunning visual",
-                icon: <Sparkles className="w-6 h-6 text-primary" />
+                icon: <Sparkles className="w-8 h-8 text-primary" />
               },
               {
                 title: "Download",
                 description: "Save your creation in high resolution for any use",
-                icon: <Star className="w-6 h-6 text-primary" />
+                icon: <Star className="w-8 h-8 text-primary" />
               }
             ].map((step, index) => (
               <motion.div
@@ -94,17 +94,17 @@ const Index = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center shadow-lg border border-white/20 relative overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center shadow-xl border border-primary/20 relative overflow-hidden hover:shadow-2xl transition-all duration-300"
               >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-full transform translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/20 rounded-full transform translate-x-1/2 -translate-y-1/2" />
                 
-                <div className="w-16 h-16 rounded-full bg-primary/20 text-primary flex items-center justify-center mx-auto mb-6">
+                <div className="w-20 h-20 rounded-full bg-primary/30 text-primary flex items-center justify-center mx-auto mb-6">
                   {step.icon}
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">{step.title}</h3>
-                <p className="text-foreground text-lg">{step.description}</p>
+                <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
+                <p className="text-foreground text-lg font-medium">{step.description}</p>
                 
-                <div className="absolute -bottom-2 -left-2 w-8 h-8 text-primary/40">
+                <div className="absolute -bottom-2 -left-2 w-8 h-8 text-primary">
                   <Box className="w-full h-full" />
                 </div>
               </motion.div>
