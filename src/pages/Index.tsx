@@ -1,5 +1,6 @@
 
 import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 
@@ -93,13 +94,18 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 viewport={{ once: true }}
-                className="overflow-hidden rounded-2xl shadow-lg"
+                className="card-3d rounded-2xl shadow-lg overflow-hidden"
+                whileHover={{ scale: 1.02 }}
               >
-                <img 
-                  src={img}
-                  alt={`Featured creation ${index + 1}`}
-                  className="w-full aspect-square object-cover image-hover"
-                />
+                <div className="card-3d-content">
+                  <img 
+                    src={img}
+                    alt={`Featured creation ${index + 1}`}
+                    className="w-full aspect-square object-cover"
+                  />
+                  <div className="card-3d-shine"></div>
+                </div>
+                <div className="absolute inset-0 pointer-events-none rounded-2xl shadow-[0_0_15px_rgba(0,0,0,0.07),0_0_5px_rgba(0,0,0,0.07)]"></div>
               </motion.div>
             ))}
           </div>
@@ -108,7 +114,7 @@ const Index = () => {
       
       <footer className="py-12 px-8 border-t">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-muted-foreground">© 2023 Imagen. All rights reserved.</p>
+          <p className="text-muted-foreground">© 2023 Vizora. All rights reserved.</p>
         </div>
       </footer>
     </motion.div>

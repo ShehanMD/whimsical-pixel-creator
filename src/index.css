@@ -120,6 +120,41 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400;
   }
+
+  /* 3D Card Hover Effects */
+  .card-3d {
+    @apply relative transition-all duration-500 ease-out transform-gpu;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .card-3d-content {
+    @apply relative w-full h-full transition-all duration-500 ease-out;
+    transform-style: preserve-3d;
+    transform: translateZ(0) rotateX(0) rotateY(0);
+    will-change: transform;
+  }
+  
+  .card-3d:hover .card-3d-content {
+    transform: translateZ(20px);
+  }
+
+  .card-3d-shine {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.25) 25%, 
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0.25) 75%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    pointer-events: none;
+  }
+  
+  .card-3d:hover .card-3d-shine {
+    @apply opacity-100;
+  }
 }
 
 /* 3D Animation Perspective */
