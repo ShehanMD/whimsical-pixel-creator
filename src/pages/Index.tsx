@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import Navbar from '@/components/Navbar';
@@ -114,7 +113,7 @@ const Index = () => {
       
       <footer className="py-12 px-8 border-t border-white/10">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-muted-foreground">© 2023 Vizora. All rights reserved.</p>
+          <p className="text-muted-foreground">© 2025 Vizora. All rights reserved.</p>
         </div>
       </footer>
     </motion.div>
