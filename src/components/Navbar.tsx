@@ -41,7 +41,7 @@ const Navbar = () => {
             to="/" 
             className={cn(
               "text-sm font-medium transition-all duration-300 hover:text-primary relative py-2",
-              location.pathname === '/' && "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:rounded-full after:shadow-[0_0_5px_rgba(149,78,255,0.7)]"
+              location.pathname === '/' && "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:rounded-full after:shadow-[0_0_5px_rgba(33,150,243,0.7)]"
             )}
           >
             Home
@@ -50,7 +50,7 @@ const Navbar = () => {
             to="/generate" 
             className={cn(
               "text-sm font-medium transition-all duration-300 hover:text-primary relative py-2",
-              location.pathname === '/generate' && "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:rounded-full after:shadow-[0_0_5px_rgba(149,78,255,0.7)]"
+              location.pathname === '/generate' && "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:rounded-full after:shadow-[0_0_5px_rgba(33,150,243,0.7)]"
             )}
           >
             Generate
