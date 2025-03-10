@@ -84,9 +84,9 @@ const HeroSection = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col space-y-2"
           >
-            <span className="text-sm font-medium tracking-wider text-primary neon-text">AI-POWERED 3D IMAGERY</span>
+            <span className="text-sm font-medium tracking-wider text-primary">AI-POWERED 3D IMAGERY</span>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
-              Transform your <span className="text-gradient neon-text">imagination</span><br />
+              Transform your <span className="text-gradient">imagination</span><br />
               into stunning 3D art
             </h1>
             <p className="max-w-xl mx-auto text-lg text-muted-foreground mt-6">
@@ -122,7 +122,7 @@ const HeroSection = () => {
                 >
                   <div className="text-white text-left">
                     <div className="text-sm font-medium mb-2 opacity-80">AI GENERATED</div>
-                    <div className="text-xl font-medium neon-text">Enchanted Forest Guardian</div>
+                    <div className="text-xl font-medium">Enchanted Forest Guardian</div>
                   </div>
                 </div>
                 <div className="hero-image-glow"></div>

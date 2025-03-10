@@ -33,7 +33,7 @@ const Navbar = () => {
           to="/" 
           className="text-2xl font-bold tracking-tight transition-all duration-300 hover:opacity-80"
         >
-          <span className="text-gradient neon-text">Vizora</span>
+          <span className="text-gradient">Vizora</span>
         </Link>
         
         <nav className="flex space-x-8">

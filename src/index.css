@@ -115,7 +115,7 @@
   
   .card-hover {
     @apply transition-all duration-500 hover:shadow-xl hover:-translate-y-1
-           dark:hover:shadow-[0_0_15px_rgba(149,78,255,0.3)];
+           dark:hover:shadow-[0_0_15px_rgba(33,150,243,0.3)];
   }
   
   .text-gradient {
@@ -162,11 +162,6 @@
     @apply relative;
     box-shadow: 0 0 5px theme('colors.primary.DEFAULT'), 
                 0 0 10px theme('colors.primary.DEFAULT');
-  }
-
-  .neon-text {
-    text-shadow: 0 0 5px theme('colors.primary.DEFAULT'),
-                 0 0 10px theme('colors.primary.DEFAULT');
   }
 
   /* 3D Mouse Hover Effect for Hero Image */
