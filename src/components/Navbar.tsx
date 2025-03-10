@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -21,6 +22,9 @@ const Navbar = () => {
     };
   }, [scrolled]);
 
+  // Letter animation for futuristic effect
+  const titleLetters = "Vizora".split("");
+
   return (
     <header 
       className={cn(
@@ -33,7 +37,46 @@ const Navbar = () => {
           to="/" 
           className="text-2xl font-bold tracking-tight transition-all duration-300 hover:opacity-80"
         >
-          <span className="text-gradient">Vizora</span>
+          <motion.span className="relative inline-flex">
+            {titleLetters.map((letter, index) => (
+              <motion.span
+                key={index}
+                className="text-gradient relative inline-block"
+                initial={{ opacity: 0.6, y: 0 }}
+                animate={{ 
+                  opacity: [0.6, 1, 0.6],
+                  y: [0, -2, 0],
+                  textShadow: [
+                    "0 0 5px rgba(33,150,243,0)",
+                    "0 0 15px rgba(33,150,243,0.5)",
+                    "0 0 5px rgba(33,150,243,0)"
+                  ]
+                }}
+                transition={{
+                  duration: 3,
+                  delay: index * 0.1,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "easeInOut"
+                }}
+              >
+                {letter}
+              </motion.span>
+            ))}
+            <motion.span
+              className="absolute -inset-x-2 -inset-y-1 bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0 rounded-lg blur-md -z-10"
+              animate={{
+                opacity: [0.1, 0.3, 0.1],
+                scale: [0.95, 1.05, 0.95],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }}
+            />
+          </motion.span>
         </Link>
         
         <nav className="flex space-x-8">
