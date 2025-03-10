@@ -25,7 +25,7 @@ const Index = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-4 neon-text">How It Works</h2>
+              <h2 className="text-3xl font-bold mb-4">How It Works</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Creating stunning 3D AI-generated images has never been easier
               </p>
@@ -55,10 +55,10 @@ const Index = () => {
                 viewport={{ once: true }}
                 className="glass rounded-2xl p-8 text-center card-hover neon-border"
               >
-                <div className="w-12 h-12 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xl font-bold mx-auto mb-6 neon-text">
+                <div className="w-12 h-12 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xl font-bold mx-auto mb-6">
                   {index + 1}
                 </div>
-                <h3 className="text-xl font-semibold mb-3 neon-text">{step.title}</h3>
+                <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
                 <p className="text-muted-foreground">{step.description}</p>
               </motion.div>
             ))}
@@ -75,7 +75,7 @@ const Index = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-4 neon-text">Featured Creations</h2>
+              <h2 className="text-3xl font-bold mb-4">Featured Creations</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Explore what others have created with our platform
               </p>
@@ -85,8 +85,8 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               "/lovable-uploads/70606e90-8bbd-477d-8b0d-9b15132ddc63.png",
-              "https://images.unsplash.com/photo-1686771017120-0a129c2b0b4f?q=80&w=2670&auto=format&fit=crop",
-              "https://images.unsplash.com/photo-1681266507686-23c59f41f679?q=80&w=2670&auto=format&fit=crop"
+              "/lovable-uploads/98ca3f66-e608-4c5e-8f6a-26e76f940ef1.png",
+              "/lovable-uploads/95247fce-543d-49fe-9c4e-b0012cf6db79.png"
             ].map((img, index) => (
               <motion.div
                 key={index}
@@ -105,7 +105,7 @@ const Index = () => {
                   />
                   <div className="card-3d-shine"></div>
                 </div>
-                <div className="absolute inset-0 pointer-events-none rounded-2xl shadow-[0_0_15px_rgba(149,78,255,0.2)]"></div>
+                <div className="absolute inset-0 pointer-events-none rounded-2xl shadow-[0_0_15px_rgba(33,150,243,0.2)]"></div>
               </motion.div>
             ))}
           </div>
