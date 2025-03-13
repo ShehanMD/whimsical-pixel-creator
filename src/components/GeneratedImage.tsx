@@ -8,14 +8,27 @@ interface GeneratedImageProps {
 }
 
 const GeneratedImage = ({ imageUrl }: GeneratedImageProps) => {
-  const handleDownload = () => {
+  const handleDownload = async () => {
     try {
+      // Fetch the image as a blob to force download
+      const response = await fetch(imageUrl);
+      const blob = await response.blob();
+      
+      // Create a blob URL for the image
+      const blobUrl = URL.createObjectURL(blob);
+      
+      // Create a temporary link element
       const link = document.createElement('a');
-      link.href = imageUrl;
+      link.href = blobUrl;
       link.download = `imagen-${Date.now()}.png`;
+      
+      // Append to document, click, and clean up
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+      
+      // Release the blob URL to free memory
+      setTimeout(() => URL.revokeObjectURL(blobUrl), 100);
       
       toast({
         title: "Download started",
