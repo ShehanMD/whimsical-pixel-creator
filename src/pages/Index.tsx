@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import Navbar from '@/components/Navbar';
@@ -10,12 +11,24 @@ const Index = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen"
+      className="min-h-screen relative"
     >
+      {/* Blurred background image */}
+      <div className="fixed inset-0 z-[-1] overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: 'url(/lovable-uploads/a845dc3d-8fa9-42f8-815e-e2388af4937a.png)', 
+            filter: 'blur(10px) brightness(0.3)',
+            transform: 'scale(1.1)' // Slightly scale up to avoid blur edges
+          }}
+        />
+      </div>
+
       <Navbar />
       <HeroSection />
 
-      <section className="py-20 px-8 bg-gradient-to-b from-background to-secondary/30">
+      <section className="py-20 px-8 bg-gradient-to-b from-background/80 to-secondary/30 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <motion.div
@@ -65,7 +78,7 @@ const Index = () => {
         </div>
       </section>
       
-      <section className="py-20 px-8">
+      <section className="py-20 px-8 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <motion.div
@@ -85,7 +98,11 @@ const Index = () => {
             {[
               "/lovable-uploads/70606e90-8bbd-477d-8b0d-9b15132ddc63.png",
               "/lovable-uploads/98ca3f66-e608-4c5e-8f6a-26e76f940ef1.png",
-              "/lovable-uploads/95247fce-543d-49fe-9c4e-b0012cf6db79.png"
+              "/lovable-uploads/95247fce-543d-49fe-9c4e-b0012cf6db79.png",
+              "/lovable-uploads/96e6fc3b-af2f-4182-826f-0c7f8433f22c.png",
+              "/lovable-uploads/2af667d7-d46e-46b8-beab-265ba08b9020.png",
+              "/lovable-uploads/a1492563-e12d-4f1e-bfff-64e78c68fac8.png",
+              "/lovable-uploads/a845dc3d-8fa9-42f8-815e-e2388af4937a.png"
             ].map((img, index) => (
               <motion.div
                 key={index}
@@ -111,7 +128,7 @@ const Index = () => {
         </div>
       </section>
       
-      <footer className="py-12 px-8 border-t border-white/10">
+      <footer className="py-12 px-8 border-t border-white/10 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-muted-foreground">© 2025 Vizora. All rights reserved.</p>
         </div>
